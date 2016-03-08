@@ -20,3 +20,10 @@ dist/
 public/
 build/
 coverage/
+
+# Windows files
+Thumbs.db
+
+# Vim save buffers
+*.swp
+*.swo
