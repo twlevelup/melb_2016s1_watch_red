@@ -20,3 +20,6 @@ dist/
 public/
 build/
 coverage/
+
+# Windows files
+Thumbs.db
