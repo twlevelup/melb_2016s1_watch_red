@@ -14,8 +14,8 @@ window.questions = [
     text: 'how many trees?'
   },
   {
-    img: '2dogs',
-    text: 'how many dogs?'
+    img: '3cats.jpg',
+    text: 'how many cats?'
   }
 ];
 
@@ -30,7 +30,7 @@ var GameView = PageView.extend({
     setTimeout(function () {
       window.App.navigate('question');
     }, 500);
-    
+
     return this;
   }
 });
