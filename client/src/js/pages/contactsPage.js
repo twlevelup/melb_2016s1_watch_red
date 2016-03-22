@@ -4,8 +4,8 @@ var PageView = require('../framework/page');
 
 var ContactsCollection = require('../collections/contacts'),
   ContactView = require('../views/contact');
-
-var ContactsView = PageView.extend({
+var ContactsView;
+ContactsView = PageView.extend({
 
   id: 'contacts',
 
@@ -17,10 +17,10 @@ var ContactsView = PageView.extend({
     left: 'back'
   },
 
-  initialize: function() {
-    this.contactsCollection = new ContactsCollection();
-    this.seedContacts();
-    this.render();
+  initialize: function () {
+      this.contactsCollection = new ContactsCollection();
+      this.seedContacts();
+      this.render();
   },
 
   // TODO use jquery to load a JSON file async test?

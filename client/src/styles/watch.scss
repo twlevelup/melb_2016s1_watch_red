@@ -15,7 +15,7 @@
 }
 
 #watch{
-  background-color: red;
+  background-color: #B3D4FC;
   display: inline-block;
   vertical-align: top;
 }
@@ -201,4 +201,22 @@
   top:1em;
   left:1em;
   width:230px;
+}
+
+.answer-center {
+  margin: auto;
+  width: 10%;
+  padding: 10px;
+}
+.answer-left {
+  position: absolute;
+  left: 0px;
+  width: 20px;
+  padding: 10px;
+}
+.answer-right {
+  position: absolute;
+  right: 0px;
+  width: 20px;
+  padding: 10px;
 }

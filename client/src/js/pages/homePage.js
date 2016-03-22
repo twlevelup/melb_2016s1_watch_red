@@ -9,9 +9,13 @@ var HomeScreen = PageView.extend({
   template: require('../../templates/pages/home.hbs'),
 
   buttonEvents: {
-    right: 'goToGame',
+    right: 'startGame',
     top: 'scrollUp',
     bottom: 'scrollDown'
+  },
+
+  startGame: function(){
+    window.App.navigate('startGame');
   },
 
   goToContacts: function() {

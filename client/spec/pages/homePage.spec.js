@@ -12,11 +12,11 @@ describe('The Home Page', function() {
 
     describe('right', function() {
 
-      it('should take the user to the contacts page', function() {
+      it('should take the user to the start game page', function() {
         spyOn(window.App, 'navigate');
         homePage.setButtonEvents();
         window.App.vent.trigger('right');
-        expect(window.App.navigate).toHaveBeenCalledWith('contacts');
+        expect(window.App.navigate).toHaveBeenCalledWith('startGame');
       });
     });
 
