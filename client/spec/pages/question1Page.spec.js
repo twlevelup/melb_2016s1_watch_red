@@ -1,13 +1,16 @@
 
 'use strict';
 
-var question1Page = require('../../src/js/pages/question1Page'),
-  Router = require('../../src/js/framework/router'),
-  App = require('../../src/js/app');
 
-window.App = App;
 
 describe('The Question1 Page', function() {
+  var question1Page;
+  beforeEach(function(){
+    question1Page = require('../../src/js/pages/question1Page');
+    var Router = require('../../src/js/framework/router'),
+      App = require('../../src/js/app');
+    window.App = App;
+  });
 
   describe('button event handlers', function() {
 

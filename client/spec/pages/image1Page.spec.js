@@ -1,13 +1,15 @@
 
 'use strict';
 
-var image1Page = require('../../src/js/pages/image1Page'),
-  Router = require('../../src/js/framework/router'),
-  App = require('../../src/js/app');
-
-window.App = App;
-
 describe('The Image1 Page', function() {
+var image1Page;
+
+  beforeEach(function(){
+    image1Page = require('../../src/js/pages/image1Page');
+    var Router = require('../../src/js/framework/router'),
+      App = require('../../src/js/app');
+    window.App = App;
+  });
 
   describe('button event handlers', function() {
 
