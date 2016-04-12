@@ -13,7 +13,7 @@ var question1Screen = PageView.extend({
   },
 
   skip: function(){
-    window.App.navigate('image1Page');
+    window.App.navigate('image1');
   },
 
   render: function() {
@@ -22,18 +22,18 @@ var question1Screen = PageView.extend({
     var seconds_left = 15;
     var interval = setInterval(function() {
       document.getElementById('timer_div').innerHTML = --seconds_left;
-
-      if (seconds_left <= 0)
-      {
-        clearInterval(interval);
-        window.App.navigate('image1Page');
-      }
-    }, 1000);
+	  this.checkCountDown(seconds_left, interval);
+    }.bind(this), 1000);
 
     return this;
-  }
+  },
 
+  checkCountDown: function(secondsLeft, interval) {
+	if (secondsLeft <= 0) {
+		clearInterval(interval);
+		window.App.navigate('image1');
+	}
+  }
 });
 
 module.exports = new question1Screen();
-

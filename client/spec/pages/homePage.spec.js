@@ -1,12 +1,20 @@
 'use strict';
 
-var homePage = require('../../src/js/pages/homePage'),
-  Router = require('../../src/js/framework/router'),
-  App = require('../../src/js/app');
+var homePage,
+  Router,
+  App;
 
 window.App = App;
 
 describe('The Home Page', function() {
+
+	beforeEach(function () {
+		homePage = require('../../src/js/pages/homePage');
+		  Router = require('../../src/js/framework/router');
+		  App = require('../../src/js/app');
+
+		window.App = App;
+	});
 
   describe('button event handlers', function() {
 

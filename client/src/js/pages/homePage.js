@@ -14,7 +14,7 @@ var HomeScreen = PageView.extend({
     bottom: 'scrollDown'
   },
 
-  startGame: function(){
+  startGame: function() {
     window.App.navigate('startGame');
   },
 
