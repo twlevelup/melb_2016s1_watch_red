@@ -26,4 +26,4 @@ var EndGameView = PageView.extend({
   }
 });
 
-module.exports = new EndGameView();
+module.exports = new EndGameView(); 
