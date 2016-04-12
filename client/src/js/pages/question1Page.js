@@ -13,7 +13,7 @@ var question1Screen = PageView.extend({
   },
 
   skip: function(){
-    window.App.navigate('image1');
+    window.App.navigate('answer1');
   },
 
   render: function() {
@@ -31,7 +31,7 @@ var question1Screen = PageView.extend({
   checkCountDown: function(secondsLeft, interval) {
 	if (secondsLeft <= 0) {
 		clearInterval(interval);
-		window.App.navigate('image1');
+		window.App.navigate('answer1');
 	}
   }
 });

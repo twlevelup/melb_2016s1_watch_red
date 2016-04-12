@@ -19,7 +19,7 @@ describe('The Question1 Page', function() {
       it('should skip the timer and display the image page', function() {
         question1Page.setButtonEvents();
         window.App.vent.trigger('bottom');
-        expect(window.App.navigate).toHaveBeenCalledWith('image1');
+        expect(window.App.navigate).toHaveBeenCalledWith('answer1');
       });
     });
 
@@ -52,7 +52,7 @@ describe('The Question1 Page', function() {
 		  it('navigates to the answer page', function () {
 			  var secondsLeft = 0;
 			  question1Page.checkCountDown(secondsLeft, 1000);
-			  expect(window.App.navigate).toHaveBeenCalledWith('image1');
+			  expect(window.App.navigate).toHaveBeenCalledWith('answer1');
 		  });
 	  });
   });
