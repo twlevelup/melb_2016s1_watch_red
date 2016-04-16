@@ -1,6 +1,6 @@
 'use strict';
 
-var answersPage = require('../../src/js/pages/answersPage'),
+var answer1Page = require('../../src/js/pages/answer1Page'),
   Router = require('../../src/js/framework/router.js'),
   App = require('../../src/js/app'),
   eventHub = require('../../src/js/framework/eventHub');
@@ -12,8 +12,8 @@ describe('The Answers Page', function() {
   describe('rendering', function() {
 
     it('should produce the correct HTML', function() {
-      answersPage.render();
-      expect(answersPage.$el).toContainHtml('<h1>Answers</h1>');
+      answer1Page.render();
+      expect(answer1Page.$el).toContainHtml('<p>8</p>');
     });
 
   });
