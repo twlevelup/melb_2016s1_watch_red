@@ -209,14 +209,15 @@
   padding: 10px;
 }
 .answer-left {
-  position: absolute;
   left: 0px;
   width: 20px;
   padding: 10px;
+  display: inline-block;
 }
 .answer-right {
-  position: absolute;
   right: 0px;
   width: 20px;
   padding: 10px;
+  display: inline-block;
+  float: right;
 }
