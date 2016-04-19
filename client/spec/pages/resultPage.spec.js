@@ -17,7 +17,7 @@ describe('The Results Page', function() {
   describe('rendering', function() {
     it('should produce the correct HTML', function() {
       resultPage.render();
-      expect(resultPage.$el).toContainText('Answer');
+      expect(resultPage.$el).toContainText('Good');
     })
   })
 });

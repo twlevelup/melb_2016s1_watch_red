@@ -30,12 +30,12 @@ var resultPage = PageView.extend({
    
     if (answer === "6") {
       result = {
-        message: 'Answer is correct'
+        message: 'Good Job!'
       };
     }
     else {
       result = {
-        message: 'Answer is incorrect. '
+        message: 'Good try.'
           + 'The correct answer is ' + 6
       };
     }
