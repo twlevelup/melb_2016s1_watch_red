@@ -58,6 +58,69 @@ textarea {
 
 @import 'app';
 
+.rightArrow {
+
+    position: absolute;
+    top: 55px;
+    font-size: 85px;
+    left: 195px;
+    color:red;
+}
+
+.leftArrow {
+
+    position: absolute;
+    top: 55px;
+    font-size: 85px;
+    left: 0px;
+    color:red;
+}
+
+.topArrow {
+
+    position: absolute;
+    top:-20px;
+    font-size: 85px;
+    left:100px;
+    color:red;
+}
+
+.startButton {
+
+    position: absolute;
+    top:197px;
+    font-size: 40px;
+    left: 80px;
+    color:red;
+
+}
+
+@keyframes flash{
+  from { color: red; }
+  to { color: blue; }
+}
+
+.flash{
+	animation-name: flash;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    -moz-animation-play-state: "paused";
+    -webkit-animation-play-state: "paused";
+}
+
+.blueArrow{
+    color: blue;
+}
+
+.dr {
+}
+
+.dt {
+}
+
+
+
+
 /* ==========================================================================
    Media Queries
    ========================================================================== */
