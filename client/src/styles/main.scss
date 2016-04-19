@@ -79,17 +79,17 @@ textarea {
 .topArrow {
 
     position: absolute;
-    top:0px;
+    top:-20px;
     font-size: 85px;
-    left: 80px;
+    left:100px;
     color:red;
 }
 
 .startButton {
 
     position: absolute;
-    top: 100px;
-    font-size: 85px;
+    top:197px;
+    font-size: 40px;
     left: 80px;
     color:red;
 
@@ -104,18 +104,18 @@ textarea {
 	animation-name: flash;
     animation-iteration-count: infinite;
     animation-duration: 1s;
+    -moz-animation-play-state: "paused";
+    -webkit-animation-play-state: "paused";
 }
 
-.dl {
-    animation-delay : 1s;
+.blueArrow{
+    color: blue;
 }
 
 .dr {
-    animation-delay : 3s;
 }
 
 .dt {
-    animation-delay : 2s;
 }
 
 

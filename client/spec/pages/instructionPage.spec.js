@@ -33,6 +33,21 @@ describe('The Instruction Page', function() {
 
   });
 
+  describe('Test change arrow', function () {
+		  it('to lArrow', function () {
+			  expect(instructionPage.changeArrow("lArrow")).toEqual("tArrow");
+		  });
+		  it('to rArrow', function () {
+			  expect(instructionPage.changeArrow("tArrow")).toEqual("rArrow");
+		  });
+		  it('to rtrrow', function () {
+			  expect(instructionPage.changeArrow("rArrow")).toEqual("lArrow");
+		  });
+		  it('to rtrrow', function () {
+			  expect(instructionPage.changeArrow("")).toEqual(null);
+		  });
+  });
+
   /*
   describe('check count down', function () {
 
