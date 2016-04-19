@@ -8,5 +8,6 @@ module.exports = {
   question: require('./questionPage'),
   startGame: require('./startGamePage'),
   question1: require('./question1Page'),
-  answer1: require('./answer1Page')
+  answer1: require('./answer1Page'),
+  instructionPage: require('./instructionPage')
 };
