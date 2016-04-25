@@ -10,20 +10,6 @@ describe('The Instruction Page', function() {
 	spyOn(window.App, 'navigate');
   });
 
-  /*
-  describe('button event handlers', function() {
-
-    describe('bottom', function() {
-      it('should skip the timer and display the image page', function() {
-        instructionPage.setButtonEvents();
-        window.App.vent.trigger('bottom');
-        expect(window.App.navigate).toHaveBeenCalledWith('image1');
-      });
-    });
-
-  });
-  */
-
   describe('rendering', function() {
 
     it('should produce the correct HTML', function() {
@@ -51,24 +37,26 @@ describe('The Instruction Page', function() {
 		  });
   });
 
+
+  describe('button event handlers', function() {
+
+    describe('bottom', function() {
+      it('should remove all interval functions and navigate to queston1', function() {
+        instructionPage.setButtonEvents();
+        window.App.vent.trigger('bottom');
+        expect(window.App.navigate).toHaveBeenCalledWith('question1');
+      });
+    });
+
+  });
+
   /*
-  describe('check count down', function () {
+  describe('initialization', function() {
 
-	  describe('when there is more than 0 seconds left', function () {
-		  it('does not navigate to the answer page', function () {
-			  var secondsLeft = 1;
-			  instructionPage.checkCountDown(secondsLeft, 1000);
-			  expect(window.App.navigate).not.toHaveBeenCalled();
-		  });
-	  });
+    it('should initalize the game score to 0', function() {
+      questionPage.initialize();
+    });
 
-	  describe('when there are 0 seconds left', function () {
-		  it('navigates to the answer page', function () {
-			  var secondsLeft = 0;
-			  instructionPage.checkCountDown(secondsLeft, 1000);
-			  expect(window.App.navigate).toHaveBeenCalledWith('image1');
-		  });
-	  });
   });
   */
 

@@ -10,9 +10,7 @@ InstructionView = PageView.extend({
   template: require('../../templates/pages/instructionPage.hbs'),
 
   buttonEvents: {
-    //right: 'goToHomePage',
-    //face: 'screenClickExample',
-    //left: 'back'
+      bottom : 'goToGame'
   },
 
   changeArrow : function(currToFlash){ 
@@ -35,7 +33,9 @@ InstructionView = PageView.extend({
 
     this.render();    
     this.currToFlash = "lArrow";
-    setInterval(function() {
+    this.movementEnabled = false;
+
+    this.toggleFlash = setInterval(function() {
         document.getElementById("tArrow").classList.remove("flash");
         document.getElementById("lArrow").classList.remove("flash");
         document.getElementById("rArrow").classList.remove("flash");
@@ -45,31 +45,17 @@ InstructionView = PageView.extend({
 
     }.bind(this),2000);
 
-
     /*
     setInterval(function() {
-        if ( this.currToFlash === "lArrow"){
-                document.getElementById(this.currToFlash).style["color"] = "red";
-        }
-        else if (currToFlash === "rarrow"){
-
-        }else if (currToFlash === "tarrow"){
-
-        }
-    }.bind(this),200);
+    }.bind(this),2000);
     */
+
   },
 
-  /*screenClickExample: function() {
-    this.$el.html('<div>Oh noes!</div>');
+  goToGame: function(){
+    window.clearInterval(this.toggleFlash);
+    window.App.navigate('question1');
   },
-  */
-
-  /*
-  goToHomePage: function() {
-    window.App.navigate('');
-  },
-  */
 
   render: function() {
 
