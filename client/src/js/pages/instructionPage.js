@@ -45,16 +45,22 @@ InstructionView = PageView.extend({
 
     }.bind(this),2000);
 
-    /*
-    setInterval(function() {
-    }.bind(this),2000);
-    */
+    this.enableMovement = setInterval(function() {
+        this.movementEnabled = true;
+    }.bind(this),10000);
 
   },
 
+  navigateToFirstGame: function(shouldMove){
+      if(shouldMove){
+            window.clearInterval(this.toggleFlash);
+            window.clearInterval(this.enableMovement);
+            window.App.navigate('question1');
+      }
+  },
+
   goToGame: function(){
-    window.clearInterval(this.toggleFlash);
-    window.App.navigate('question1');
+      this.navigateToFirstGame(this.movementEnabled);
   },
 
   render: function() {

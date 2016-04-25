@@ -37,11 +37,33 @@ describe('The Instruction Page', function() {
 		  });
   });
 
+  describe('Test navigate function', function() {
+    it('should navigate', function() {
+        instructionPage.navigateToFirstGame(true);
+        expect(window.App.navigate).toHaveBeenCalledWith('question1');
+        });
+    });
+
+  describe('Intialise', function() {
+
+    it('should set the currToFlash correctly', function() {
+        instructionPage.initialize()
+        expect(instructionPage.currToFlash).toEqual("lArrow");
+        expect(instructionPage.movementEnabled).toEqual(false);
+        });
+
+    it('should set the movementEnabled', function() {
+        instructionPage.initialize()
+        expect(instructionPage.movementEnabled).toEqual(false);
+        });
+    });
+        
+
 
   describe('button event handlers', function() {
-
     describe('bottom', function() {
-      it('should remove all interval functions and navigate to queston1', function() {
+      it('should remove all interval functions and navigate if movementEnabled', function() {
+        instructionPage.movementEnabled = true;
         instructionPage.setButtonEvents();
         window.App.vent.trigger('bottom');
         expect(window.App.navigate).toHaveBeenCalledWith('question1');
