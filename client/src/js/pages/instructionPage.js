@@ -15,14 +15,16 @@ InstructionView = PageView.extend({
     //left: 'back'
   },
 
-  changeArrow : function(currArrow){ 
+  changeArrow : function(currToFlash){ 
 
-        if ( currArrow === "lArrow"){
+        if ( currToFlash === "lArrow"){
             return "tArrow";
         }
-        else if (currArrow === "tArrow"){
+        else if (currToFlash === "tArrow"){
             return "rArrow";
-        }else if (currArrow === "rArrow"){
+        }else if (currToFlash === "rArrow"){
+            return "okButton";
+        }else if (currToFlash === "okButton"){
             return "lArrow";
         }
 
@@ -32,25 +34,26 @@ InstructionView = PageView.extend({
   initialize: function() {
 
     this.render();    
-    this.currArrow = "lArrow";
+    this.currToFlash = "lArrow";
     setInterval(function() {
         document.getElementById("tArrow").classList.remove("flash");
         document.getElementById("lArrow").classList.remove("flash");
         document.getElementById("rArrow").classList.remove("flash");
-        document.getElementById(this.currArrow).classList.add("flash");
-        this.currArrow = this.changeArrow(this.currArrow);
+        document.getElementById("okButton").classList.remove("flash");
+        document.getElementById(this.currToFlash).classList.add("flash");
+        this.currToFlash = this.changeArrow(this.currToFlash);
 
     }.bind(this),2000);
 
 
     /*
     setInterval(function() {
-        if ( this.currArrow === "lArrow"){
-                document.getElementById(this.currArrow).style["color"] = "red";
+        if ( this.currToFlash === "lArrow"){
+                document.getElementById(this.currToFlash).style["color"] = "red";
         }
-        else if (currArrow === "rarrow"){
+        else if (currToFlash === "rarrow"){
 
-        }else if (currArrow === "tarrow"){
+        }else if (currToFlash === "tarrow"){
 
         }
     }.bind(this),200);
