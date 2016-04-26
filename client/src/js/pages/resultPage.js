@@ -38,8 +38,8 @@ var resultPage = PageView.extend({
       result = 'Good Job!';
     }
     else {
-      result = 'Good try. '
-          + 'The correct answer is ' + 6;
+      result = 'Good try! '
+          + 'The correct answer is ' + 6 + ' :)';
     }
     
     this.$el.html(this.template({ message: result }));
