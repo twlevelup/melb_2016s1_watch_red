@@ -11,5 +11,6 @@ module.exports = {
   answer1: require('./answer1Page'),
   'answer1/:id': require('./resultPage'),
   question2: require('./question2Page'),
-  instructionPage: require('./instructionPage')
+  instructionPage: require('./instructionPage'),
+  endGame: require('./endGamePage')
 };

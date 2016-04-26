@@ -8,22 +8,21 @@ var EndGameView = PageView.extend({
 
   template: require('../../templates/pages/endGame.hbs'),
 
-  initialize: function () {
-    // if (game.score < 2) {
-    //   this.message = "Better luck next time.";
-    // } else if (game.score >= 2 && game.score < 4) {
-    //   this.message = "Well done!";
-    // } else {
-    //   this.message = "Excellent!";
-    // }
-    this.render();
-  },
-
   render: function() {
     this.$el.html(this.template());
-    this.$el.find('p').html(this.message);
+
+    var elementHTML;
+
+    if (window.score === 5) {
+      elementHTML = '<p>Excellent!</p>';
+    } else {
+      elementHTML = '<p>Well done!</p>';
+    }
+
+    this.$el.find('div').html(elementHTML);
+
     return this;
   }
 });
 
-module.exports = new EndGameView(); 
+module.exports = new EndGameView();
