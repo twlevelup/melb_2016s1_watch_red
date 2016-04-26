@@ -17,30 +17,32 @@ var resultPage = PageView.extend({
     window.App.navigate('question2');
   },
   
-  render: function(fragment) {
-    var result = {};
-    var fragment = Backbone.history.fragment;
+  render: function(response) {
+    var result = '';
     var answer;
-    if (fragment) {
-      answer = fragment.substring(fragment.indexOf('/') + 1);
+    
+    // Retrieve user response
+    // May be defined in URL or args depending on execution context
+    if (!response) {
+      var fragment = Backbone.history.fragment;
+      answer = parseInt(
+        fragment.substring(fragment.lastIndexOf('/') + 1)
+      );
     }
     else {
-      answer = '';
+      answer = parseInt(response);
     }
    
-    if (answer === "6") {
-      result = {
-        message: 'Good Job!'
-      };
+    // Set result text based on answer
+    if (answer === 6) {
+      result = 'Good Job!';
     }
     else {
-      result = {
-        message: 'Good try.'
-          + 'The correct answer is ' + 6
-      };
+      result = 'Good try. '
+          + 'The correct answer is ' + 6;
     }
     
-    this.$el.html(this.template(result));
+    this.$el.html(this.template({ message: result }));
     return this;
   }
 
