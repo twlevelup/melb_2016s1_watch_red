@@ -35,7 +35,7 @@ var resultPage = PageView.extend({
    
     // Set result text based on answer
     if (answer === 6) {
-      result = 'Good Job!';
+      result = 'Good Job! <img src="/images/smiley.png" alt="" />';
     }
     else {
       result = 'Good try! '
