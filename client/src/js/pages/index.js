@@ -14,4 +14,7 @@ module.exports = {
   answer4: require('./answer4Page'),
   'answer4/:id': require('./resultPage'),
   instructionPage: require('./instructionPage')
+  instructionPage: require('./instructionPage'),
+  endGame: require('./endGamePage')
+
 };
