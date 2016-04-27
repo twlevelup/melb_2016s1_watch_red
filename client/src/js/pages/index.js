@@ -10,6 +10,8 @@ module.exports = {
   question1: require('./question1Page'),
   answer1: require('./answer1Page'),
   'answer1/:id': require('./resultPage'),
-  question2: require('./question2Page'),
+  question4: require('./question4Page'),
+  answer4: require('./answer4Page'),
+  'answer4/:id': require('./resultPage'),
   instructionPage: require('./instructionPage')
 };
