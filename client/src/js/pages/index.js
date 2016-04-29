@@ -13,7 +13,6 @@ module.exports = {
   question4: require('./question4Page'),
   answer4: require('./answer4Page'),
   'answer4/:id': require('./resultPage'),
-  instructionPage: require('./instructionPage')
   instructionPage: require('./instructionPage'),
   endGame: require('./endGamePage')
 
