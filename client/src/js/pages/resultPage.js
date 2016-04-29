@@ -2,10 +2,11 @@
 'use strict';
 
 var PageView = require('../framework/page');
+var model = require('../models/countingGame');
 
 var resultPage = PageView.extend({
 
-  id: 'answer1',
+  id: 'result',
 
   template: require('../../templates/pages/result.hbs'),
 
@@ -14,12 +15,19 @@ var resultPage = PageView.extend({
   },
   
   next: function() {
-    window.App.navigate('question2');
+    model.next();
+    if (model.current()) {
+      window.App.navigate('question');
+    } 
+    else {
+      window.App.navigate('endGame');
+    }
   },
   
   render: function(response) {
     var result = '';
     var answer;
+    var correctAnswer = model.current().answer;
     
     // Retrieve user response
     // May be defined in URL or args depending on execution context
@@ -34,12 +42,13 @@ var resultPage = PageView.extend({
     }
    
     // Set result text based on answer
-    if (answer === 6) {
+    if (answer === correctAnswer) {
       result = 'Good Job! <img src="/images/smiley.png" alt="" />';
+      model.incrementScore();
     }
     else {
       result = 'Good try! '
-          + 'The correct answer is ' + 6 + ' :)';
+          + 'The correct answer is ' + correctAnswer + ' :)';
     }
     
     this.$el.html(this.template({ message: result }));

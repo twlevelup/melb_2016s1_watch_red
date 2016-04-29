@@ -11,7 +11,9 @@ var app = require('../src/js/app');
 describe('The App', function() {
 
   beforeEach(function() {
-    app.start();
+    var Router = require('../src/js/framework/router');
+    app = require('../src/js/app');
+    window.App = app;
   });
 
   it('should have a router', function() {
