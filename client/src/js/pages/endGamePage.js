@@ -1,6 +1,7 @@
 'use strict';
 
 var PageView = require('../framework/page');
+var model = require('../models/countingGame');
 
 var EndGameView = PageView.extend({
 
@@ -13,7 +14,7 @@ var EndGameView = PageView.extend({
 
     var elementHTML;
 
-    if (window.score === 5) {
+    if (model.score === 5) {
       elementHTML = '<p>Excellent!</p>';
     } else {
       elementHTML = '<p>Well done!</p>';
