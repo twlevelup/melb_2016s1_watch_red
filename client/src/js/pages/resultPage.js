@@ -42,14 +42,7 @@ var resultPage = PageView.extend({
     }
    
     // Set result text based on answer
-    if (this.isCorrectAnswer(answer, correctAnswer)) {
-      result = 'Good Job! <img src="/images/smiley.png" alt="" />';
-      model.incrementScore();
-    }
-    else {
-      result = 'Good try! '
-          + 'The correct answer is ' + correctAnswer + ' :)';
-    }
+    var result = this.processResult(answer, correctAnswer);
     
     this.$el.html(this.template({ message: result }));
     return this;
@@ -57,6 +50,21 @@ var resultPage = PageView.extend({
   
   isCorrectAnswer: function(userResponse, correctAnswer) {
     return userResponse === correctAnswer;
+  },
+  
+  processResult: function(answer, correctAnswer) {
+    if (this.isCorrectAnswer(answer, correctAnswer)) {
+      model.incrementScore();
+      return 'Good Job! <img src="/images/smiley.png" alt="" />';
+    }
+    else {
+      return 'Good try! '
+          + 'The correct answer is ' + correctAnswer + ' :)';
+    }
+  },
+  
+  getResponse: function(input) {
+    return parseInt(input);
   }
 
 });

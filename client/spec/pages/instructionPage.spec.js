@@ -3,15 +3,21 @@
 
 describe('The Instruction Page', function() {
   var instructionPage;
+  var model = require('../../src/js/models/countingGame');
   beforeEach(function(){
     instructionPage = require('../../src/js/pages/instructionPage');
     var Router = require('../../src/js/framework/router'),
       App = require('../../src/js/app');
     window.App = App;
 	spyOn(window.App, 'navigate');
+  spyOn(model, 'initialize');
   });
 
   describe('rendering', function() {
+    it('should initialize the model', function() {
+      instructionPage.render();
+      expect(model.initialize).toHaveBeenCalled();
+    });
 
     it('should produce the correct HTML', function() {
     instructionPage.render();

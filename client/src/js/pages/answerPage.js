@@ -39,15 +39,19 @@ var answerScreen = PageView.extend({
   
   render: function() {
     var options = model.current().choices;
-    var choices = {
+    var choices = this.mapOptions(options);
+    
+    this.$el.html(this.template(choices));
+    return this;
+  },
+  
+  mapOptions: function(options) {
+    return {
       top: options[0],
       left: options[1],
       bottom: options[2],
       right: options[3]
     };
-    
-    this.$el.html(this.template(choices));
-    return this;
   }
 
 });

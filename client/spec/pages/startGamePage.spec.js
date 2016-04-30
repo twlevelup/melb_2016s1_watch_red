@@ -1,8 +1,7 @@
-
+/*
 'use strict';
 
 
-/*
 describe('The start game Page', function() {
   var startGamePage;
 	var model = require('../../src/js/models/countingGame');
@@ -43,4 +42,5 @@ describe('The start game Page', function() {
   });
 
 });
+
 */

@@ -67,6 +67,18 @@ describe('The Answers Page', function() {
     })
   });
   
+  describe('setting options', function() {
+    it('should return an object mapping choices to cardinal directions', function() {
+      var choices = [1, 2, 3, 4];
+      expect(answerPage.mapOptions(choices)).toEqual({
+        top: 1, 
+        left: 2,
+        bottom: 3,
+        right: 4
+      });
+    });
+  });
+  
   describe('button event handlers', function() {
     describe('top', function() {
       it('should pass first choice as an answer', function() {

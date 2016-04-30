@@ -1,6 +1,4 @@
-
 /*
-
 'use strict';
 
 var PageView = require('../framework/page');

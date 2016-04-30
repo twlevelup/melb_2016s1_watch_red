@@ -86,5 +86,17 @@ describe('The Results Page', function() {
     it('should return false if user answer does not match correct answer', function() {
       expect(resultPage.isCorrectAnswer(4, 5)).toEqual(false);
     });
+  });
+  
+  describe('get result message', function() {
+    it('should return a string', function() {
+      expect(resultPage.processResult(4, 4)).toEqual(jasmine.any(String));
+    });
+  });
+  
+  describe('get user response', function() {
+    it('should return a number', function() {
+      expect(resultPage.getResponse('4')).toEqual(jasmine.any(Number));
+    });
   })
 });
