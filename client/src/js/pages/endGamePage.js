@@ -9,6 +9,16 @@ var EndGameView = PageView.extend({
 
   template: require('../../templates/pages/endGame.hbs'),
 
+
+
+  buttonEvents: {
+    bottom: 'selectBottom'
+  },
+  
+   selectBottom: function() {
+    window.App.navigate('');
+  },
+
   render: function() {
     this.$el.html(this.template());
 
@@ -20,7 +30,7 @@ var EndGameView = PageView.extend({
       elementHTML = '<p>Well done!</p>';
     }
 
-    this.$el.find('div').html(elementHTML);
+    this.$el.find('.end-game').html(elementHTML);
 
     return this;
   },
