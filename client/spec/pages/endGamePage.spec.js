@@ -17,21 +17,21 @@ describe('The EndGame Page', function() {
 
   describe('render', function () {
     it('should say well done when the score is not 5/5', function () {
-      window.score = 4;
+      window.game.score = 3;
       endGamePage.render();
       expect(endGamePage.$el).toContainHtml('<p>Well done!</p>');
     })
 
     describe('when the score is 5/5', function () {
       it('should not say well done', function () {
-        window.score = 5;
+        window.game.score = 3;
         endGamePage.render();
         expect(endGamePage.$el).not.toContainHtml('<p>Well done!</p>');
       });
     });
 
     it('should say excellent when the kid score is 5/5', function () {
-      window.score = 5;
+      window.game.score = 5;
       endGamePage.render();
       expect(endGamePage.$el).toContainHtml('<p>Excellent!</p>');
     })

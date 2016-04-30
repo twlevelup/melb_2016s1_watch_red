@@ -36,6 +36,7 @@ var resultPage4 = PageView.extend({
     // Set result text based on answer
     if (answer === 2) {
       result = 'Good Job! <img src="/images/smiley.png" alt="" />';
+      window.game.score +=1;
     }
     else {
       result = 'Good try! '

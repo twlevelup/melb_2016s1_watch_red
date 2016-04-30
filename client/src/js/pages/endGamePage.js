@@ -13,7 +13,7 @@ var EndGameView = PageView.extend({
 
     var elementHTML;
 
-    if (window.score === 5) {
+    if (window.game.score === 4) {
       elementHTML = '<p>Excellent!</p>';
     } else {
       elementHTML = '<p>Well done!</p>';
