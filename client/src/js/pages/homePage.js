@@ -15,7 +15,7 @@ var HomeScreen = PageView.extend({
   },
 
   startGame: function() {
-    window.App.navigate('startGame');
+    window.App.navigate('instructionPage');
   },
 
   goToContacts: function() {

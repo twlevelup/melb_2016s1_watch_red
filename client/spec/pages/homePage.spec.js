@@ -19,11 +19,11 @@ describe('The Home Page', function() {
   describe('button event handlers', function() {
 
     describe('right', function() {
-      it('should take the user to the start game page', function() {
+      it('should take the user to the instruction page', function() {
         spyOn(window.App, 'navigate');
         homePage.setButtonEvents();
         window.App.vent.trigger('right');
-        expect(window.App.navigate).toHaveBeenCalledWith('startGame');
+        expect(window.App.navigate).toHaveBeenCalledWith('instructionPage');
       });
     });
 

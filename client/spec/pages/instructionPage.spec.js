@@ -58,7 +58,7 @@ describe('The Instruction Page', function() {
   describe('Test navigate function', function() {
     it('should navigate', function() {
         instructionPage.navigateToFirstGame(true);
-        expect(window.App.navigate).toHaveBeenCalledWith('question1');
+        expect(window.App.navigate).toHaveBeenCalledWith('question');
         });
     });
 
@@ -84,7 +84,7 @@ describe('The Instruction Page', function() {
         instructionPage.movementEnabled = true;
         instructionPage.setButtonEvents();
         window.App.vent.trigger('bottom');
-        expect(window.App.navigate).toHaveBeenCalledWith('question1');
+        expect(window.App.navigate).toHaveBeenCalledWith('question');
       });
     });
 

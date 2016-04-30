@@ -41,7 +41,7 @@ InstructionView = PageView.extend({
       if(shouldMove){
             window.clearInterval(this.toggleFlash);
             window.clearInterval(this.enableMovement);
-            window.App.navigate('question1');
+            window.App.navigate('question');
       }
   },
 
