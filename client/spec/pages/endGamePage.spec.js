@@ -10,9 +10,8 @@ window.App = App;
 describe('The EndGame Page', function() {
   beforeEach(function () {
     endGamePage = require('../../src/js/pages/endGamePage');
-      Router = require('../../src/js/framework/router');
-      App = require('../../src/js/app');
-
+    Router = require('../../src/js/framework/router');
+    App = require('../../src/js/app');
     window.App = App;
   });
 
