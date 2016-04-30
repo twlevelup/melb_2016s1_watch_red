@@ -18,6 +18,8 @@ var question4Screen = PageView.extend({
   render: function() {
     this.$el.html(this.template());
 
+    window.game.questionIndex += 1;
+
     var seconds_left = 15;
     var interval = setInterval(function() {
       document.getElementById('timer_div').innerHTML = --seconds_left;

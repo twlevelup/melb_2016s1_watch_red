@@ -52,6 +52,19 @@ InstructionView = PageView.extend({
 
     this.$el.html(this.template());
 
+    window.game = {};
+
+    // reset the score
+    window.game.score = 0;
+
+    window.game.questionArray = ['question1', 'question2', 'question3', 'question4', 'question5'];
+
+    window.game.questionIndex = 0;
+
+    // current game answer
+    window.game.answer = 0;
+
+
     this.toggleFlash = setInterval(function() {
         document.getElementById("tArrow").classList.remove("flash");
         document.getElementById("lArrow").classList.remove("flash");
