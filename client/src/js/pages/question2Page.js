@@ -2,11 +2,11 @@
 
 var PageView = require('../framework/page');
 
-var question1Screen = PageView.extend({
+var question2Screen = PageView.extend({
 
-  id: 'question1',
+  id: 'question2',
 
-  template: require('../../templates/pages/question1.hbs'),
+  template: require('../../templates/pages/question2.hbs'),
 
   buttonEvents: {
     bottom: 'skip'
@@ -14,7 +14,7 @@ var question1Screen = PageView.extend({
 
   skip: function(){
     clearInterval(this.interval);
-    window.App.navigate('answer1');
+    window.App.navigate('answer2');
   },
 
   render: function() {
@@ -34,9 +34,9 @@ var question1Screen = PageView.extend({
   checkCountDown: function(secondsLeft, interval) {
   	if (secondsLeft <= 0) {
   		clearInterval(interval);
-  		window.App.navigate('answer1');
+  		window.App.navigate('answer2');
   	}
   }
 });
 
-module.exports = new question1Screen();
+module.exports = new question2Screen();

@@ -14,7 +14,7 @@ var resultPage1 = PageView.extend({
   },
   
   next: function() {
-    window.App.navigate('question2');
+    window.App.navigate(window.game.questionArray[window.game.questionIndex]);
   },
   
   render: function(response) {
@@ -34,12 +34,12 @@ var resultPage1 = PageView.extend({
     }
    
     // Set result text based on answer
-    if (answer === 6) {
+    if (answer === window.game.answer) {
       result = 'Good Job! <img src="/images/smiley.png" alt="" />';
     }
     else {
       result = 'Good try! '
-          + 'The correct answer is ' + 6 + ' :)';
+          + 'The correct answer is ' + window.game.answer + ' :)';
     }
     
     this.$el.html(this.template({ message: result }));

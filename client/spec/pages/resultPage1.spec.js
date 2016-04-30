@@ -16,11 +16,13 @@ describe('The Results Page', function() {
   
   describe('rendering', function() {
     it('should display success message if response is correct', function() {
+      window.game.answer = 6;
       resultPage1.render(6);
       expect(resultPage1.$el).toContainText('Good Job!');
     });
     
     it('should display the correct answer if response incorrect', function() {
+      window.game.answer = 6;
       resultPage1.render(4);
       expect(resultPage1.$el).toContainText('Good try');
       expect(resultPage1.$el).toContainText('6');

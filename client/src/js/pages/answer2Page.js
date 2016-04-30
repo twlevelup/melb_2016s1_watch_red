@@ -3,11 +3,11 @@
 
 var PageView = require('../framework/page');
 
-var answer1Screen = PageView.extend({
+var answer2Screen = PageView.extend({
 
-  id: 'answer1',
+  id: 'answer2',
 
-  template: require('../../templates/pages/answer1.hbs'),
+  template: require('../../templates/pages/answer2.hbs'),
 
   buttonEvents: {
     top: 'selectTop',
@@ -17,28 +17,28 @@ var answer1Screen = PageView.extend({
   },
   
   selectTop: function() {
-    window.App.navigate('answer1/8');
+    window.App.navigate('answer2/3');
   },
   
   selectLeft: function() {
-    window.App.navigate('answer1/7');
+    window.App.navigate('answer2/4');
   },
   
   selectBottom: function() {
-    window.App.navigate('answer1/5');
+    window.App.navigate('answer2/2');
   },
   
   selectRight: function() {
-    window.App.navigate('answer1/6');
+    window.App.navigate('answer2/5');
   },
   
   render: function() {
     this.$el.html(this.template());
-    window.game.answer = 6;
+    window.game.answer = 3;
     return this;
   }
 
 });
 
-module.exports = new answer1Screen();
+module.exports = new answer2Screen();
 

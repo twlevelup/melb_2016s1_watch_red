@@ -26,6 +26,14 @@ var GameView = PageView.extend({
 	render: function() {
 		// reset the score
 		window.game.score = 0;
+
+		window.game.questionArray = ['question1', 'question2', 'question3', 'question4', 'question5'];
+
+		window.game.questionIndex = 0;
+
+		// current game answer
+		window.game.answer = 0;
+
 		// go to question page
 		window.App.navigate('question');
 
