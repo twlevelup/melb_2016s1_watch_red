@@ -1,16 +1,34 @@
+
 'use strict';
 
 describe('The Instruction Page', function() {
   var instructionPage;
+  var model = require('../../src/js/models/countingGame');
   beforeEach(function(){
     instructionPage = require('../../src/js/pages/instructionPage');
     var Router = require('../../src/js/framework/router'),
       App = require('../../src/js/app');
     window.App = App;
 	spyOn(window.App, 'navigate');
+  spyOn(model, 'initialize');
+  });
+  
+  describe('go to game', function () {
+  
+    it('should call navigate to first game', function () {
+      instructionPage.initialize();
+      spyOn(instructionPage, 'navigateToFirstGame');
+      instructionPage.goToGame();
+      expect(instructionPage.navigateToFirstGame).toHaveBeenCalledWith(instructionPage.movementEnabled);
+    });
+  
   });
 
   describe('rendering', function() {
+    it('should initialize the model', function() {
+      instructionPage.render();
+      expect(model.initialize).toHaveBeenCalled();
+    });
 
     it('should produce the correct HTML', function() {
     instructionPage.render();
@@ -40,7 +58,7 @@ describe('The Instruction Page', function() {
   describe('Test navigate function', function() {
     it('should navigate', function() {
         instructionPage.navigateToFirstGame(true);
-        expect(window.App.navigate).toHaveBeenCalledWith('question1');
+        expect(window.App.navigate).toHaveBeenCalledWith('question');
         });
     });
 
@@ -66,7 +84,7 @@ describe('The Instruction Page', function() {
         instructionPage.movementEnabled = true;
         instructionPage.setButtonEvents();
         window.App.vent.trigger('bottom');
-        expect(window.App.navigate).toHaveBeenCalledWith('question1');
+        expect(window.App.navigate).toHaveBeenCalledWith('question');
       });
     });
 

@@ -34,7 +34,7 @@ var answer2Screen = PageView.extend({
   
   render: function() {
     this.$el.html(this.template());
-    window.game.answer = 3;
+    // window.game.answer = 3;
     return this;
   }
 

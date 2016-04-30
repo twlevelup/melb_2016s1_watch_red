@@ -13,7 +13,7 @@ var HomeScreen = PageView.extend({
     top: 'scrollUp',
     bottom: 'scrollDown'
   },
-
+  
   instructionPage: function() {
     window.App.navigate('instructionPage');
   },

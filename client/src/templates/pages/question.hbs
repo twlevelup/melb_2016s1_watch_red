@@ -1,2 +1,15 @@
-<h1>Question:</h1>
-<p></p>
+<div class="question-page">
+	<div>
+		<p class="question">Question {{ question_no }}</p> 
+		<div class="timer" id="timer_div"></div>
+	</div>
+
+	<p>
+	    {{ question.text }}
+	</p>
+
+
+	<img src="{{ question.img }}" alt="" />
+
+	<p class="next-button">SKIP :)</p>
+</div>

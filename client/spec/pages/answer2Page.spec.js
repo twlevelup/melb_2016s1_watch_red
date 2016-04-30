@@ -8,7 +8,7 @@ var answer2Page,
 describe('The Answers Page', function() {
     beforeEach(function() {
       answer2Page = require('../../src/js/pages/answer2Page');
-      Router = require('../../src/js/framework/router'),
+      Router = require('../../src/js/framework/router');
       App = require('../../src/js/app');
       window.App = App;
       spyOn(window.App, 'navigate');
@@ -17,7 +17,7 @@ describe('The Answers Page', function() {
   describe('rendering', function() {
     it('should produce the correct HTML', function() {
       answer2Page.render();
-      expect(answer2Page.$el).toContainHtml('<p>3</p>');
+      expect(answer2Page.$el).toContainHtml('<p>5</p>');
     });
   });
 

@@ -8,7 +8,7 @@ var answer3Page,
 describe('The Answers Page', function() {
     beforeEach(function() {
       answer3Page = require('../../src/js/pages/answer3Page');
-      Router = require('../../src/js/framework/router'),
+      Router = require('../../src/js/framework/router');
       App = require('../../src/js/app');
       window.App = App;
       spyOn(window.App, 'navigate');
@@ -28,7 +28,7 @@ describe('The Answers Page', function() {
         window.App.vent.trigger('top');
         expect(window.App.navigate).toHaveBeenCalledWith('answer3/3');
       });
-    })
+    });
     
     describe('left', function() {
       it('should pass 4 as an answer', function() {
