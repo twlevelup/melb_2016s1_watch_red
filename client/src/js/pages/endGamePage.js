@@ -22,6 +22,22 @@ var EndGameView = PageView.extend({
     this.$el.find('div').html(elementHTML);
 
     return this;
+  },
+  
+  foo: function () {
+    return 1;
+  },
+
+  bar: function () {
+    return 2;
+  },
+
+  baz: function () {
+    return 3;
+  },
+
+  foobar: function () {
+    return 4;
   }
 });
 

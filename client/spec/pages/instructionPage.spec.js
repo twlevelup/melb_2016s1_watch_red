@@ -12,6 +12,17 @@ describe('The Instruction Page', function() {
 	spyOn(window.App, 'navigate');
   spyOn(model, 'initialize');
   });
+  
+  describe('go to game', function () {
+  
+    it('should call navigate to first game', function () {
+      instructionPage.initialize();
+      spyOn(instructionPage, 'navigateToFirstGame');
+      instructionPage.goToGame();
+      expect(instructionPage.navigateToFirstGame).toHaveBeenCalledWith(instructionPage.movementEnabled);
+    });
+  
+  });
 
   describe('rendering', function() {
     it('should initialize the model', function() {

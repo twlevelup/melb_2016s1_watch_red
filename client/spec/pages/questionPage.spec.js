@@ -1,7 +1,9 @@
 
 'use strict';
 
-
+var questionPage = require('../../src/js/pages/questionPage');
+var Router = require('../../src/js/framework/router');
+var App = require('../../src/js/app');
 
 describe('The Question Page', function() {
   var questionPage;
@@ -17,10 +19,19 @@ describe('The Question Page', function() {
       }
     ]);
     questionPage = require('../../src/js/pages/questionPage');
-    var Router = require('../../src/js/framework/router');
-    var App = require('../../src/js/app');
+    Router = require('../../src/js/framework/router');
+    App = require('../../src/js/app');
     window.App = App;
 	  spyOn(window.App, 'navigate');
+  });
+
+  describe('skipping the question', function() {
+
+    it('should navigate to the answer page', function () {
+      questionPage.skip();
+      expect(window.App.navigate).toHaveBeenCalled();
+    });
+
   });
 
   describe('button event handlers', function() {
