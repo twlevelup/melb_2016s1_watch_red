@@ -66,4 +66,34 @@ describe('The Answers Page', function() {
       });
     })
   });
+  
+  describe('button event handlers', function() {
+    describe('top', function() {
+      it('should pass first choice as an answer', function() {
+        answerPage.selectTop();
+        expect(window.App.navigate).toHaveBeenCalledWith('answer/4');
+      });
+    })
+    
+    describe('left', function() {
+      it('should pass second choice as an answer', function() {
+        answerPage.selectLeft();
+        expect(window.App.navigate).toHaveBeenCalledWith('answer/1');
+      });
+    });
+    
+    describe('bottom', function() {
+      it('should pass third choice as an answer', function() {
+        answerPage.selectBottom();
+        expect(window.App.navigate).toHaveBeenCalledWith('answer/5');
+      });
+    });
+    
+    describe('right', function() {
+      it('should pass fourth choice as an answer', function() {
+        answerPage.selectRight();
+        expect(window.App.navigate).toHaveBeenCalledWith('answer/3');
+      });
+    })
+  });
 });

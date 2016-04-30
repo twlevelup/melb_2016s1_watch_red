@@ -68,11 +68,23 @@ describe('The Results Page', function() {
     });
     
     it('should move to end game screen once game is completed', function() {
-      model.currentPos = 1;
-      console.log(model);
-      console.log(model.current());
+      model.currentPos = 2;
       resultPage.next();
       expect(window.App.navigate).toHaveBeenCalledWith('endGame');
     });
   });
+  
+  describe('checking the answer', function() {
+    it('should return a boolean', function() {
+      expect(resultPage.isCorrectAnswer(4, 4)).toEqual(jasmine.any(Boolean));
+    });
+    
+    it('should return true if user answer matches correct answer', function() {
+      expect(resultPage.isCorrectAnswer(4, 4)).toEqual(true);
+    });
+    
+    it('should return false if user answer does not match correct answer', function() {
+      expect(resultPage.isCorrectAnswer(4, 5)).toEqual(false);
+    });
+  })
 });

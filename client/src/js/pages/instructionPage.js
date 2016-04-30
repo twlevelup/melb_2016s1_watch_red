@@ -31,23 +31,8 @@ InstructionView = PageView.extend({
 
   initialize: function() {
 
-    this.render();    
     this.currToFlash = "lArrow";
     this.movementEnabled = false;
-
-    this.toggleFlash = setInterval(function() {
-        document.getElementById("tArrow").classList.remove("flash");
-        document.getElementById("lArrow").classList.remove("flash");
-        document.getElementById("rArrow").classList.remove("flash");
-        document.getElementById("okButton").classList.remove("flash");
-        document.getElementById(this.currToFlash).classList.add("flash");
-        this.currToFlash = this.changeArrow(this.currToFlash);
-
-    }.bind(this),2000);
-
-    this.enableMovement = setInterval(function() {
-        this.movementEnabled = true;
-    }.bind(this),10000);
 
   },
 
@@ -67,10 +52,24 @@ InstructionView = PageView.extend({
 
     this.$el.html(this.template());
 
+    this.toggleFlash = setInterval(function() {
+        document.getElementById("tArrow").classList.remove("flash");
+        document.getElementById("lArrow").classList.remove("flash");
+        document.getElementById("rArrow").classList.remove("flash");
+        document.getElementById("okButton").classList.remove("flash");
+        document.getElementById(this.currToFlash).classList.add("flash");
+        this.currToFlash = this.changeArrow(this.currToFlash);
+
+    }.bind(this),2000);
+
+    this.enableMovement = setInterval(function() {
+        this.movementEnabled = true;
+    }.bind(this),10000);
+
+
     return this;
   }
 
 });
 
 module.exports = new InstructionView();
-

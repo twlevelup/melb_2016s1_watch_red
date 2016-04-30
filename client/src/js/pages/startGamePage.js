@@ -1,3 +1,6 @@
+
+/*
+
 'use strict';
 
 var PageView = require('../framework/page');
@@ -64,3 +67,4 @@ var startGameScreen = PageView.extend({
 });
 
 module.exports = new startGameScreen();
+*/
