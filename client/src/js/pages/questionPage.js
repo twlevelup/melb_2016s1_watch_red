@@ -6,6 +6,8 @@ var model = require('../models/countingGame');
 var questionScreen = PageView.extend({
 
   id: 'question',
+  
+  interval: 0,
 
   template: require('../../templates/pages/question.hbs'),
 
@@ -14,6 +16,7 @@ var questionScreen = PageView.extend({
   },
 
   skip: function(){
+    clearInterval(this.interval);
     window.App.navigate('answer');
   },
 
@@ -25,9 +28,9 @@ var questionScreen = PageView.extend({
     }));
 
     var seconds_left = 15;
-    var interval = setInterval(function() {
+    this.interval = setInterval(function() {
       document.getElementById('timer_div').innerHTML = --seconds_left;
-	    this.checkCountDown(seconds_left, interval);
+	    this.checkCountDown(seconds_left, this.interval);
     }.bind(this), 1000);
 
     return this;
