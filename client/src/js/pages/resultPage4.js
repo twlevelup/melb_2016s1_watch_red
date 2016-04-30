@@ -3,7 +3,7 @@
 
 var PageView = require('../framework/page');
 
-var resultPage = PageView.extend({
+var resultPage4 = PageView.extend({
 
   id: 'answer1',
 
@@ -13,9 +13,9 @@ var resultPage = PageView.extend({
     bottom: 'next'
   },
   
-  next: function() {
-    window.App.navigate('question2');
-  },
+ next: function() {
+  window.App.navigate('endGame');
+},
   
   render: function(response) {
     var result = '';
@@ -34,12 +34,12 @@ var resultPage = PageView.extend({
     }
    
     // Set result text based on answer
-    if (answer === 6) {
+    if (answer === 2) {
       result = 'Good Job! <img src="/images/smiley.png" alt="" />';
     }
     else {
       result = 'Good try! '
-          + 'The correct answer is ' + 6 + ' :)';
+          + 'The correct answer is ' + 2 + ' :)';
     }
     
     this.$el.html(this.template({ message: result }));
@@ -48,5 +48,5 @@ var resultPage = PageView.extend({
 
 });
 
-module.exports = new resultPage();
+module.exports = new resultPage4();
 

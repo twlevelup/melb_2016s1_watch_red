@@ -9,10 +9,10 @@ module.exports = {
   startGame: require('./startGamePage'),
   question1: require('./question1Page'),
   answer1: require('./answer1Page'),
-  'answer1/:id': require('./resultPage'),
+  'answer1/:id': require('./resultPage1'),
   question4: require('./question4Page'),
   answer4: require('./answer4Page'),
-  'answer4/:id': require('./resultPage'),
+  'answer4/:id': require('./resultPage4'),
   instructionPage: require('./instructionPage'),
   endGame: require('./endGamePage')
 
