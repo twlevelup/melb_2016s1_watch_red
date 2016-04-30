@@ -30,7 +30,7 @@ describe('The Instruction Page', function() {
 			  expect(instructionPage.changeArrow("rArrow")).toEqual("okButton");
 		  });
 		  it('to lArrow', function () {
-			  expect(instructionPage.changeArrow("okButton")).toEqual("lArrow");
+			  expect(instructionPage.changeArrow("okButton")).toEqual("startButton");
 		  });
 		  it('default', function () {
 			  expect(instructionPage.changeArrow("")).toEqual(null);

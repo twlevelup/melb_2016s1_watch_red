@@ -23,6 +23,8 @@ InstructionView = PageView.extend({
         }else if (currToFlash === "rArrow"){
             return "okButton";
         }else if (currToFlash === "okButton"){
+            return "startButton";
+        }else if (currToFlash === "startButton"){
             return "lArrow";
         }
 
@@ -70,6 +72,7 @@ InstructionView = PageView.extend({
         document.getElementById("lArrow").classList.remove("flash");
         document.getElementById("rArrow").classList.remove("flash");
         document.getElementById("okButton").classList.remove("flash");
+        document.getElementById("startButton").classList.remove("flash");
         document.getElementById(this.currToFlash).classList.add("flash");
         this.currToFlash = this.changeArrow(this.currToFlash);
 
